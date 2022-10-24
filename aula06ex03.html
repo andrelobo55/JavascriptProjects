@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro script!</title>
+    <!-- INÍCIO CSS -->
+    <style>
+        /* Muda a cor do body inteiro */
+        body{
+            background-color: rgb(177, 62, 192);
+            color: rgb(226, 223, 223);
+            font: normal 20pt Arial;
+        }
+        /* Muda a cor apenas do título h1 */
+        h1{
+            color: rgb(223, 158, 73);
+        } 
+    </style>
+    <!-- FIM CSS-->
+</head>
+<body>
+    <h1>Olá, mundo!</h1>
+    <p>Já me livrei da maldição!</p>
+    <!-- INÍCIO do Javascript-->
+    <script>
+        /**
+         * O método 'window.prompt' sempre retorna uma String, por isso é necessário fazer uma conversão das variáveis para número inteiro
+         * ou flutuante;
+        */
+        
+        // CONVERSÃO PARA INT;
+        var n1 = Number.parseInt(window.prompt("Digite um número: ")); // Guarda o valor de n1 digitado pela pessoa;
+        var n2 = Number.parseInt(window.prompt("Digite outro número: ")); // Guarda o valor de n2 digitado;
+        var s1 = n1 + n2; // soma recebe número + número 2;
+        window.alert("A soma de " +n1+ " + " +n2+ " = " +s1); // Mostra a soma dos números;
+
+        // CONVERSÃO PARA FLOAT;
+        var n3 = Number.parseFloat(window.prompt("Digite um número: "));
+        var n4 = Number.parseFloat(window.prompt("Digite outro número: "));
+        var s2 = n3 + n4;
+        window.alert("A soma de " +n3+ " + " +n4+ " = " +s2);
+        
+        // USANDO NUMBER
+        var n5 = Number(window.prompt("Digite um número: "));
+        var n6 = Number(window.prompt("Digite outro número: "));
+        var s3 = n5 + n6;
+        // CONVERSÃO PARA STRING;
+       // window.alert("A soma de " +n5+ " + " +n6+ " = " +s3.toString()); // Ou String(s3);
+        
+        // USANDO PLACE HOLDER ${}
+        window.alert(`A soma de ${n5} + ${n6} = ${s3}`);
+        /**
+         * OBS.:
+         *  (String) + (String) = concatenação;
+         *  (Number) + (Number) = adição;
+        */
+    </script>
+    <!-- FIM do Javascript-->
+</body>
+</html>
