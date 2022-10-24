@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com o DOM!</title>
+    <style>
+        body{
+            background: rgb(99, 240, 122);
+            color: rgb(253, 253, 253);
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com o DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar <strong>DOM</strong> em Javascript</p>
+    <div  id="msg01">
+        Clique em mim
+    </div>
+    <div name="msg02">
+        
+    </div>
+
+    <script>
+        var corpo = window.document.body; // corpo recebe o parent window parent document parent body;
+        var p1 = window.document.getElementsByTagName(`p`)[1]; // p1 recebe selecionar o 2º elemento parágrafo por tag;
+        //var d = window.document.getElementById("msg01"); // Seleciona por id;
+        var d = window.document.querySelector('div#msg01'); // Seleciona por seletor. Divs são # e objetos são .;
+        var e = window.document.getElementsByName("msg02")[0]; // Seleciona pelo nome;
+
+        document.write(p1.innerHTML); // Seleção por Tag.Escreve no documento HTML o parágrafo;
+        d.style.background = "green"; // Seleção por seletor
+        e.innerText = "Olá!"; // Seleção por nome
+        //d.innerText = "Estou aguardando...";
+        
+        //window.alert(p1.innerText); // Mostra o texto do parágrafo em uma janela;
+        //p1.style.color = 'blue' // Muda a cor do parágrafo para blue, através de 'style' que é pai de 'color';
+        //corpo.style.background = 'black' // Muda o background do 'body' para preto;
+        //window.document.write(`Está escrito assim: ${p1.innerText}`); // Mostra o texto no HTML;
+
+    </script>
+</body>
+</html>
