@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+
+    <style>
+        div#area01{
+            font: normal 20pt Arial;
+            background: blue;
+            color: whitesmoke;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- div recebe id area01 e eventos/funções de onclick, onmouseenter e onmouseout.   
+         onmouseclick = dispara uma ação que é realizada ao clicar.
+         onmouseenter = é coagido quando o cursor do mouse adentra uma área.
+         onmouseout = é disparado quando o cursor do mouse sai de uma área.
+
+         MÉTODO 1: FAZENDO NO HTML:
+         <div id="area01" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+            Interaja...
+        </div>
+    -->
+
+    <div id="area01">
+        Interaja...
+    </div>
+
+    <script>
+        /* variável 'area' pode ser usada por todas as funções dentro do 'script' */
+        var area = window.document.getElementById("area01");
+
+        /* MÉTODO 2 -> FAZENDO NO JAVASCRIPT */
+        /* a função 'addEventListner' faz com que o html realize ações de eventos. */
+        area.addEventListener('click', clicar)
+        area.addEventListener('mouseenter', entrar)
+        area.addEventListener('mouseout', sair)
+        
+        /* função que dispara um evento, em que o usuário clica em cima da div e ela retorna uma mensagem. */
+        function clicar(){
+            area.innerText = "Clicou!"
+            area.style.background = "blueviolet"
+        }
+        /* função em que dispara o evento, em que o usuário arrasta o mouse para dentro da div e ela retorna uma msg */
+        function entrar(){
+            area.innerText = "Entrou!"
+            area.style.background = "lightgreen"
+        }
+        /* função que dispara o evento 'onmouseout', em que o curso ao sair da div retorna uma mensagem, */
+        function sair(){
+            area.innerText = "Saiu!"
+            area.style.background = "red"
+        }
+    </script>
+</body>
+
+</html>
