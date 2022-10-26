@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando números</title>
+    <style>
+        /* Altera a fonte do texto do Body */
+        body{
+            font: normal 20pt Arial;
+        }
+        /* Altera a fonte e a largura de todos os inputs */
+        input{
+            font: normal 20pt Arial;
+            width: 10%;
+        }
+        /* Adiciona um espaçamento para a div com id = res */
+        div#res{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Somando números</h1>
+    <!-- Adiciona uma caixa de entrada para o usuário digitar números   -->
+   <input type="number" name="textn1" id="textn1">
+   <input type="number" name="textn2" id="textn2">
+   <!-- Adiciona uma caixa de botão com evento de clicar e receber uma função de soma -->
+   <input type="button" value="Somar" onclick="somar()"> 
+    <div id="res">Resultado</div>
+
+   <script>
+        /* Função que soma dois valores */
+        function somar(){
+            /* var tn1 recebe o input digitado na primeira caixa e tn2 o da segunda caixa de entrada */
+            var tn1 = window.document.getElementById('textn1'), tn2 = document.querySelector('input#textn2')
+            /* res recebe a div com id = res */
+            var res = window.document.querySelector('div#res')
+            /* n1 rececbe o valor de tn1 como número ao invés de String. Senão, ocorreria uma concatenação e não adição */
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            /* soma faz a soma de n1 e n2 */
+            var soma = n1 + n2
+            /* res escreve no documento html */
+            res.innerHTML = `A soma de ${n1} + ${n2} é igual a <strong>${soma}</strong>`
+        }
+   </script>
+</body>
+</html>
