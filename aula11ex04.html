@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificação de Nacionalidade</title>
+    <style>
+        body{
+            font: normal 20pt Arial;
+        }
+        div#res{
+            margin-top: 2%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Título na página   -->
+    <h1>Identificação de Estrangeiro no Brasil</h1>
+    <!-- Usuário informa seu páis na caixa de entrada   -->
+    <p>Informe seu país:
+        <!-- Caixa de texto   -->
+        <input type="text" name="txt01" id="txt01">
+        <!-- Botão de confirmar que dispara evento ao clicar chamando uma função que verifica a nacionalidade   -->
+        <input type="button" name="bt01" value="confirmar" onclick="verificar()">
+    </p>
+    <!--  Resultado ao clicar no botão  -->
+    <div id="res">
+        Resultado...
+    </div>
+
+    <script>
+        /*  txtxpais recebe o conteúdo da caixa de texto por id */
+        var txtpais = window.document.getElementById('txt01')
+        /*  res recebe o conteúdo da div por id */
+        var res = window.document.querySelector('div#res')
+        
+        /*  Função que verifica a nacionalidade */
+        function verificar(){
+            /*  pais recebe o valor String de txtpais extraído do html*/
+            var pais = txtpais.value
+            /*  Altera a mensagem da div com id res */
+            res.innerHTML = `Seu país é <strong>${pais}</strong>.`
+
+            /*  Verifica se o usuário é estrangeiro ou não  */
+            if(pais == 'Brasil'){
+                res.innerHTML += "<p>Você é brasileiro(a).</p>"
+            }
+            else{
+                res.innerHTML += "<p>Você é estrangeiro(a).</p>"
+            }
+        }
+    </script>
+</body>
+</html>
